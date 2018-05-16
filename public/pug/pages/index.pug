@@ -1,0 +1,44 @@
+include ../base/mixins
+block vars
+  - var mainPage = true
+  - var title = 'Главная страница'
+  - var description = 'Описание главной страницы'
+  - var mainNav = {
+    'Главная': 'index.html',
+    'О компании': 'about.html'
+  }
+
+<!-- Doctype HTML5 -->
+doctype html
+html(lang='ru')
+  head
+    // Задаем кодировку для страницы
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width')
+    //- link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600&subset=cyrillic" rel="stylesheet")
+
+    //- link(href='css/style.css' rel='stylesheet')
+    // SEO Задание тега Title
+    title #{title}
+    // SEO Задание тега Description
+    meta(name='description', content=description)
+
+  body
+    header.page-header
+      .__wrap
+        if mainPage !== underfined
+          a(href='index.html').__logo
+            img(src='img/logo.svg' alt='Логотип' width='60' height='60').__img
+        else
+          .__logo
+            img(src='img/logo.svg' alt='Логотип' width='60' height='60').__img
+
+        nav.main-nav
+          ul.__list
+            each link, title in mainNav
+              li.__item
+                a(href= link).__link= title
+
+
+    block content
