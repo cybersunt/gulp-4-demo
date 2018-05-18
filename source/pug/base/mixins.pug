@@ -1,26 +1,43 @@
-mixin about-advokat (className, param)
-  .lawyer(class=`lawyer--${className}`)
-    .lawyer__info
-      p.lawyer__name Адвокатский кабинет
-        br
-        | Якубов Рашад Киязович
-      p.lawyer__description Адвокатская Палата Санкт-Петербурга, Адвокатский кабинет, Якубов Рашад Киязович, регистрационный номер в реестре адвокатов 78/5587
-    .lawyer__contacts
-      p.lawyer__adress
-        img(src=`img/content/icon-adress-${param}.png`, alt='Иконка геолокации',  width="32" height="32").lawyer__icon
-        span Санкт-Петербург, г. Пушкин ул. Оранжерейная д. 48 БЦ "Графит" 2 этаж, офис 28
-      p.lawyer__connections
-        a(href='tel:+7-(812)-962-19-51').lawyer__phone
-          img(src=`img/content/icon-phone-${param}.png`, alt='Иконка телефона',  width="32" height="32").lawyer__icon
-          span +7 (812) 962 19 51
-        a(href='mailto:9621951@mail.ru').lawyer__email
-          img(src=`img/content/icon-mail-${param}.png`, alt='Иконка email',  width="32" height="32").lawyer__icon
-          span 9621951@mail.ru
+//- COMPONENTS
 
-mixin nav (className, name, items)
-  nav(class=`${className}`)
-    ul(class=`${className}__list`)
-      each item in items
-        li(class=`${className}__item`)
-          a(class=`${className}__link`, href='#')= item
+//- logotype
+mixin logo(className, name, alt, width, height)
+  if currentPage !== 'Главная'
+    a(href='index.html' class=`${className}__logo`)
+      img(src=`img/${name}.svg` alt=`${alt}` width=width height=height class=`${className}__img`)
+  else
+    div(class=`${className}__logo`)
+      img(src=`img/${name}.svg` alt=`${alt}` width=width height=height class=`${className}__img`)
+
+//-main-nav
+mixin mainNav
+  nav.main-nav
+    ul.__list
+      each link, title in nav.mainNav
+        case currentPage
+          when !title
+          when 'Главная'
+            li.__item
+              a(href= link).__link= title
+          default
+            li.__item.__item--current
+              a(href= link).__link= title
+
+//- social networks
+mixin socialLinks(names)
+  ul.social
+    each name, network in social.networks
+      li.__item
+        a.__link(href=network.url, aria-label=network.title)
+          img(src='http://placehold.it/25x25' alt=network.title width=network.width height=network.height).__icon
+          //- svg.__icon(width='26px', height='15px', aria-labelledby='Мы во Вконтакте')
+          //-   title#title__vk Мы во Вконтакте
+          //-     use(xlink:href='#vk-icon')
+
+//- mixin nav (className, name, items)
+//-   nav(class=`${className}`)
+//-     ul(class=`${className}__list`)
+//-       each item in items
+//-         li(class=`${className}__item`)
+//-           a(class=`${className}__link`, href='#')= item
 

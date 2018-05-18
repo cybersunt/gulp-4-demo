@@ -1,45 +1,32 @@
-include ../base/mixins
+extends ../base/basic-templ
+
 block vars
   - var currentPage = 'Главная'
   - var title = 'Главная страница'
   - var description = 'Описание главной страницы'
 
-<!-- Doctype HTML5 -->
-doctype html
-html(lang='ru')
-  head
-    // Задаем кодировку для страницы
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width')
-    //- link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600&subset=cyrillic" rel="stylesheet")
+block content
+  main.page-main
+    h1 Welcome to gulp4-start template!
+    
+    // slideshow/gallery/adversting
+    section.slideshow
+      .slideshow__wrap
+        h2.visually-hidden Слайдшоу
+          ul.slideshow__list
+            li.slideshow__item.slideshow__item--active
+              p.slideshow__caption
+              p.slideshow__desc Заголовок первого слайда
+              a.btn.slideshow__btn(href='#') Кнопка
+              picture.slideshow__img
+                source(type='image/webp', srcset='img/content/slide1.webp')
+                img(src='img/content/slide1.png', alt='Какой-нибудь текст')
+          .slideshow__toggles
+            button.slideshow__toggle.slideshow__toggle--checked(type='button', aria-label='Первый слайд')
+            button.slideshow__toggle(type='button', aria-label='Второй слайд')
+            button.slideshow__toggle(type='button', aria-label='Третий слайд')
+          .slideshow__arrows
+            button.slideshow__arrow.slideshow__arrow--prev(type='button', aria-label='Предыдущий слайд')
+            button.slideshow__arrow.slideshow__arrow--next(type='button', aria-label='Следующий слайд')
 
-    //- link(href='css/style.css' rel='stylesheet')
-    // SEO Задание тега Title
-    title #{title}
-    // SEO Задание тега Description
-    meta(name='description', content=description)
 
-  body
-    header.page-header
-      .__wrap
-        if currentPage !== 'Главная'
-          a(href='index.html').__logo
-            img(src='img/logo.svg' alt='Логотип' width='60' height='60').__img
-        else
-          .__logo
-            img(src='img/logo.svg' alt='Логотип' width='60' height='60').__img
-
-        nav.main-nav
-          ul.__list
-            each link, title in nav.mainNav
-              case currentPage
-                when !title
-                when 'Главная'
-                  li.__item
-                    a(href= link).__link= title
-                default
-                  li.__item.__item--current
-                    a(href= link).__link= title
-
-    block content

@@ -9,6 +9,7 @@ const config = {
   ready: './public',
   dev: './source',
   pug: {
+    watch: '/pug/**/*.pug',
     src:'/pug/pages/**/*.pug',
     data: '/pug/data/'
   },
@@ -25,12 +26,12 @@ gulp.task('clean', () => {
 });
 
 
-gulp.task('pug', () => {
+gulp.task('pug', () => {  
   return gulp.src(config.dev + config.pug.src)
   .pipe(gp.pug({
     locals : {
-      nav: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'navigation.json', 'utf8'))
-      // social: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'social.json', 'utf8'))
+      nav: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'navigation.json', 'utf8')),
+      social: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'social.json', 'utf8'))
     },
     pretty: true,
     plugins : [bemify()]
@@ -66,7 +67,8 @@ gulp.task('server', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch(config.dev + config.pug.src, gulp.series('pug'));
+  gulp.watch(config.dev + config.pug.watch, gulp.series('pug'));
+  gulp.watch(config.dev + config.pug.data + '**.json', gulp.series('pug'));
 });
 
 gulp.task('default', gulp.series(

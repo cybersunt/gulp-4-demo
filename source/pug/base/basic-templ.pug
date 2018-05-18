@@ -20,15 +20,18 @@ html(lang='ru')
   body
     header.page-header
       .__wrap
-        if mainPage !== underfined
-          a(href='index.html').__logo
-            img(src='img/logo.svg' alt='Логотип' width='60' height='60').__img
-        else
-          .__logo
-            img(src='img/logo.svg' alt='Логотип' width='60' height='60').__img
-
-        //- nav.main-nav
-        //-   ul.__list
-
+        //- logotype
+        +logo('page-header', 'logoN', 'Логотип в хедере', 150, 60) 
+        //- navigation
+        +mainNav
 
     block content
+
+    footer.page-footer
+      .__wrap
+        //- copyright
+        .copyright &copy; Copyright 2018. Made in Russia
+        //- logotype
+        +logo('page-footer', 'logoN', 'Логотип в футере', 100, 40)
+        //- social links
+        +socialLinks
