@@ -1,13 +1,13 @@
 //- COMPONENTS
 
 //- logotype
-mixin logo ( name, alt, width, height)
+mixin logo(className, name, alt, width, height)
   if currentPage !== 'Главная'
-    a(href='index.html').__logo
-      img(src=`img/${name}.svg` alt=`${alt}` width=width height=height).__img
+    a(href='index.html' class=`${className}__logo`)
+      img(src=`img/${name}.svg` alt=`${alt}` width=width height=height class=`${className}__img`)
   else
-    .`${className}`__logo
-      img(src=`img/${name}.svg` alt=`${alt}` width=width height=height).__img
+    div(class=`${className}__logo`)
+      img(src=`img/${name}.svg` alt=`${alt}` width=width height=height class=`${className}__img`)
 
 //-main-nav
 mixin mainNav
