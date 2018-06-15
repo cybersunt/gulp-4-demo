@@ -10,26 +10,5 @@ block content
     h1 Welcome to gulp4-start template!
 
     // slideshow/gallery/advertising
-    section.slideshow
-      .__wrap
-        h2.visually-hidden Слайдшоу
-          ul.__list
-            each index, item in advert.items
-              li.__item
-                 p.__caption= item.caption
-                 p.__desc= item.description
-                 a.btn.__btn(href=item.url)= item.captionBtn
-                 picture.__img
-                   source(type='image/webp', srcset='img/content/slide1.webp')
-                   img(src=`img/slide${index}.png`, alt=item.imgAlt)
-
-          .__toggles
-            button.__toggle.__toggle--checked(type='button', aria-label='Первый слайд')
-            button.__toggle(type='button', aria-label='Второй слайд')
-            button.__toggle(type='button', aria-label='Третий слайд')
-
-          .__arrows
-            button.__arrow.__arrow--prev(type='button', aria-label='Предыдущий слайд')
-            button.__arrow.__arrow--next(type='button', aria-label='Следующий слайд')
-
+    +promo('slideshow')
 
