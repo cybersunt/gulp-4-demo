@@ -1,0 +1,13 @@
+{
+  "items": [
+  	{
+      "url":"https://nexign-systems.com/ru",
+      "caption": "Заголовок первого слайда",
+      "description": "Описание первого слайда",
+      "captionBtn": "Кнопка",
+      "imgAlt": "Какой-нибудь текст",
+      "imgSrc": "slide01",
+      "url": "catalog.html"
+    }
+  ]
+}

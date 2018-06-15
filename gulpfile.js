@@ -32,7 +32,8 @@ gulp.task('pug', () => {
     locals : {
       nav: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'navigation.json', 'utf8')),
       social: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'social.json', 'utf8')),
-      advert: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'advertising.json', 'utf8'))
+      advert: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'advertising.json', 'utf8')),
+      logos: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'logos.json', 'utf8'))
     },
     pretty: true,
     plugins : [bemify()]

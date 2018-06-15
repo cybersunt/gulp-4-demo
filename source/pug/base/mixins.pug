@@ -44,7 +44,7 @@ mixin promo(className)
             li(class=`${className}__item`)
               p(class=`${className}__caption`)= item.caption
               p(class=`${className}__desc`)= item.description
-              a.btn(class=`${className}__btn`)(href=item.url)= item.captionBtn
+              a.btn(class=`${className}__btn`,href=item.url)= item.captionBtn
                 img(class=`${className}__img` src=`img/${item.imgSrc}.jpg`, alt=item.imgAlt)
         div(class=`${className}__toggles`)
           button(class=`${className}__toggle ${className}__toggle--checked` type='button', aria-label='Первый слайд')
@@ -53,6 +53,19 @@ mixin promo(className)
         div(class=`${className}__arrows`)
           button(class=`${className}__arrow ${className}__arrow--prev` type='button', aria-label='Предыдущий слайд')
           button(class=`${className}__arrow ${className}__arrow--next` type='button', aria-label='Следующий слайд')
+
+// brands/parthers/customers/technologies
+mixin logoList(className)
+  section(class=`${className}`)
+    div(class=`${className}__wrap`)
+      h2.visually-hidden Используемые технологии в проекте
+        ul(class=`${className}__list`)
+          each item in logos.items
+            li(class=`${className}__item`)
+              a(href=item.url, class=`${className}__link` aria-label=item.label)
+              picture
+                source(type='image/webp', srcset=`img/${item.imgSrc}.webp`)
+                img(class=`${className}__img` src=`img/${item.imgSrc}.png`, alt=item.label)
 
 //- mixin nav (className, name, items)
 //-   nav(class=`${className}`)
