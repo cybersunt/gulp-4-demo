@@ -3,7 +3,8 @@ const gulp = require('gulp'),
       browserSync = require('browser-sync').create(),
       fs = require('fs'),
       del = require('del'),
-      bemify = require('pug-bemify');
+      bemify = require('pug-bemify'),
+      merge = require('gulp-merge-json');
 
 const config = {
   ready: './public',
@@ -11,7 +12,8 @@ const config = {
   pug: {
     watch: '/pug/**/*.pug',
     src:'/pug/pages/**/*.pug',
-    data: '/pug/data/'
+    data: '/pug/data/',
+    json: '/pug/pages/'
   },
   img: '/**/*'
 };
@@ -25,16 +27,19 @@ gulp.task('clean', () => {
   return del(config.ready);
 });
 
+gulp.task('data', () => {
+  return gulp.src(config.dev + config.pug.data + '*json')
+  .pipe(merge({
+    fileName: 'layout.json'
+  }))
+  .pipe(gulp.dest(config.dev + config.pug.json))
+  .pipe(browserSync.reload({stream : true}));
+});
 
 gulp.task('pug', () => {
   return gulp.src(config.dev + config.pug.src)
   .pipe(gp.pug({
-    locals : {
-      nav: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'navigation.json', 'utf8')),
-      social: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'social.json', 'utf8')),
-      advert: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'advertising.json', 'utf8')),
-      logos: JSON.parse(fs.readFileSync(config.dev + config.pug.data + 'logos.json', 'utf8'))
-    },
+    locals : JSON.parse(fs.readFileSync(config.dev + config.pug.json + 'layout.json', 'utf8')),
     pretty: true,
     plugins : [bemify()]
   }))
@@ -70,12 +75,13 @@ gulp.task('server', () => {
 
 gulp.task('watch', () => {
   gulp.watch(config.dev + config.pug.watch, gulp.series('pug'));
-  gulp.watch(config.dev + config.pug.data + '**.json', gulp.series('pug'));
+  gulp.watch(config.dev + config.pug.data + '**.json', gulp.series('data'));
 });
 
 gulp.task('default', gulp.series(
   'clean',
   'copy',
+  'data',
   'pug',
   gulp.parallel(
     'watch',

@@ -1,0 +1,73 @@
+{
+	"ads": [
+		{
+			"caption": "Заголовок первого слайда",
+			"description": "Описание первого слайда",
+			"captionBtn": "Кнопка",
+			"imgAlt": "Какой-нибудь текст о картинке",
+			"imgSrc": "slide01",
+			"url": "catalog.html"
+		}
+	],
+	"pictures": [
+		{
+			"name": "Петер Сервсис",
+			"imgSrc": "nexign"
+		}
+	],
+	"logos": [
+		{
+			"url": "https://nexign-systems.com/ru",
+			"label": "Петер Сервсис",
+			"imgSrc": "nexign"
+		}
+	],
+	"mainNav": {
+		"Главная": "index.html",
+		"О компании": "about.html",
+		"Каталог": "catalog.html",
+		"Контакты": "contacts.html"
+	},
+	"networks": [
+		{
+			"name": "vk",
+			"title": "Вконтакте",
+			"href": "#vk-icon",
+			"url": "https://vk.com",
+			"width": 25,
+			"height": 25
+		},
+		{
+			"name": "fb",
+			"title": "Facebook",
+			"href": "#fb-icon",
+			"url": "https://facebook.com",
+			"width": 25,
+			"height": 25
+		},
+		{
+			"name": "insta",
+			"title": "Instagram",
+			"href": "#insta-icon",
+			"url": "https://instagram.com",
+			"width": 25,
+			"height": 25
+		},
+		{
+			"name": "tw",
+			"title": "Twitter",
+			"href": "#tw-icon",
+			"url": "https://twitter.com",
+			"width": 25,
+			"height": 25
+		},
+		{
+			"name": "gh",
+			"title": "GitHub",
+			"href": "#gb-icon",
+			"url": "https://github.com",
+			"width": 25,
+			"height": 25
+		}
+	]
+}
