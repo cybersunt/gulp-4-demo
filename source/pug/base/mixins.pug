@@ -82,6 +82,48 @@ mixin logoList(className)
                 source(type='image/webp', srcset=`img/${logo.imgSrc}.webp`)
                 img(class=`${className}__img`, src=`img/${logo.imgSrc}.png`, alt=logo.label)
 
+// map
+mixin map
+  section.contacts
+    h2.visually-hidden= contacts.title
+    .contacts__wrap
+      #map.contacts__map
+        picture.contacts__map-img
+          source(type='image/webp', srcset=`img/content/${contacts.imgSrc}.webp`)
+          img(src=`img/content/${contacts.imgSrc}.jpg`, alt=`Офис компании по адресу ул. ${contacts.adress}, ${contacts.city}`)
+      .contacts__info
+        p.contacts__name= contacts.name
+        p.contacts__adress= `${contacts.index}, ${contacts.city}, ${contacts.adress}`
+        p.contacts__phone= `тел. ${contacts.phone}`
+        a.btn.contacts__btn(href='write-us.html') Напишите нам
+
+//FORMS
+
+// feedback
+mixin feedback
+  .overlay
+      section.feedback
+        .feedback__wrap
+          h2.feedback__title Напишите нам
+          form.feedback__form(action='https://echo.htmlacademy.ru', method='post')
+            each feedback, value in feedbacks
+              p.feedback__layout
+                label.feedback__label(for=`${feedback.id}`)= feedback.label
+                  if feedback.id !== "message"
+                    if feedback.required === true
+                      input.feedback__field(id=`${feedback.id}`, placeholder=`${feedback.placeholder}`, type=`${feedback.type}`, name=`${feedback.name}` required)
+                    else
+                       input.feedback__field(id=`${feedback.id}`, placeholder=`${feedback.placeholder}`, type=`${feedback.type}`, name=`${feedback.name}`)
+                  else
+                    textarea.feedback__textarea(id=`${feedback.id}`, placeholder=`${feedback.placeholder}`, name=`${feedback.name}`)
+
+            button.btn.feedback__send(type='submit')= btns.sendOff
+          button.feedback__close(type='button', aria-label=`${btns.close}`)
+            svg.feedback__close-icon(width='21', height='21', aria-labelledby='feedback__close-title')
+              title#feedback__close-title= btns.close
+                 use(xlink:href='#close-cross')
+
+
 //- mixin nav (className, name, items)
 //-   nav(class=`${className}`)
 //-     ul(class=`${className}__list`)

@@ -9,10 +9,61 @@
 			"url": "catalog.html"
 		}
 	],
+	"btns": {
+		"sendOff": "Отправить",
+		"close": "Закрыть"
+	},
+	"contacts": {
+		"title": "Контакты",
+		"name": "Название компании",
+		"index": "191186",
+		"city": "Санкт-Петербург",
+		"adress": "Большая Конюшенная 19/8",
+		"phone": "+7 (812) 275-75-75",
+		"imgSrc": "map"
+	},
 	"pictures": [
 		{
-			"name": "Петер Сервсис",
-			"imgSrc": "nexign"
+			"caption": "Веб-сайты",
+			"annotation": "Мир никогда не будет прежним после того как увидит ваш сайт!",
+			"src": "picture"
+		}
+	],
+	"feedbacks": [
+		{
+			"id": "your-name",
+			"name": "your-name",
+			"type": "text",
+			"label": "Ваше имя:",
+			"placeholder": "Представьтесь, пожалуйста",
+			"required": true
+		},
+		{
+			"id": "phone",
+			"name": "phone",
+			"type": "tel",
+			"label": "Ваше телефон:",
+			"placeholder": "Введите ваш номер телефона",
+			"required": true
+		},
+		{
+			"tag": "input",
+			"id": "email",
+			"name": "email",
+			"type": "email",
+			"label": "Ваше email:",
+			"placeholder": "Для отправки ответа",
+			"required": false
+		},
+		{
+			"id": "message",
+			"label": "Текст письма:",
+			"placeholder": "В свободной форме"
+		}
+	],
+	"buttons": [
+		{
+			"send": "Отправить"
 		}
 	],
 	"logos": [

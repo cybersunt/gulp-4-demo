@@ -2,6 +2,9 @@
 <!-- slideshow/gallery/advertising/advertisement/adv/commercial/promo/slider/carousel-->
 <!-- features/benefits/advantages/services-->
 <!-- brands/parthers/customers/technologies-->
+<!-- map-->
+<!--FORMS-->
+<!-- feedback-->
 <!-- Doctype HTML5 -->
 <!DOCTYPE html>
 <html lang="ru">
@@ -102,6 +105,23 @@
         </h2>
       </div>
     </section>
+    <section class="contacts">
+      <h2 class="visually-hidden">Контакты</h2>
+      <div class="contacts__wrap">
+        <div class="contacts__map" id="map">
+          <picture class="contacts__map-img">
+            <source type="image/webp" srcset="img/content/map.webp" />
+            <img src="img/content/map.jpg" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург" />
+          </picture>
+        </div>
+        <div class="contacts__info">
+          <p class="contacts__name">Название компании</p>
+          <p class="contacts__adress">191186, Санкт-Петербург, Большая Конюшенная 19/8</p>
+          <p class="contacts__phone">тел. +7 (812) 275-75-75</p>
+          <a class="btn contacts__btn" href="write-us.html">Напишите нам</a>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="page-footer">
     <div class="page-footer__wrap">
@@ -138,6 +158,43 @@
       </ul>
     </div>
   </footer>
+  <div class="overlay">
+    <section class="feedback">
+      <div class="feedback__wrap">
+        <h2 class="feedback__title">Напишите нам</h2>
+        <form class="feedback__form" action="https://echo.htmlacademy.ru" method="post">
+          <p class="feedback__layout">
+            <label class="feedback__label" for="your-name">Ваше имя:
+              <input class="feedback__field" id="your-name" placeholder="Представьтесь, пожалуйста" type="text" name="your-name" required="required" />
+            </label>
+          </p>
+          <p class="feedback__layout">
+            <label class="feedback__label" for="phone">Ваше телефон:
+              <input class="feedback__field" id="phone" placeholder="Введите ваш номер телефона" type="tel" name="phone" required="required" />
+            </label>
+          </p>
+          <p class="feedback__layout">
+            <label class="feedback__label" for="email">Ваше email:
+              <input class="feedback__field" id="email" placeholder="Для отправки ответа" type="email" name="email" />
+            </label>
+          </p>
+          <p class="feedback__layout">
+            <label class="feedback__label" for="message">Текст письма:
+              <textarea class="feedback__textarea" id="message" placeholder="В свободной форме" name="undefined"></textarea>
+            </label>
+          </p>
+          <button class="btn feedback__send" type="submit">Отправить</button>
+        </form>
+        <button class="feedback__close" type="button" aria-label="Закрыть">
+          <svg class="feedback__close-icon" width="21" height="21" aria-labelledby="feedback__close-title">
+            <title id="feedback__close-title">Закрыть
+              <use xlink:href="#close-cross"></use>
+            </title>
+          </svg>
+        </button>
+      </div>
+    </section>
+  </div>
 </body>
 
 </html>

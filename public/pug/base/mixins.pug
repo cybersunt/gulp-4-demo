@@ -59,12 +59,15 @@ mixin featuresList(className)
     div(class=`${className}__wrap`)
       h2.visually-hidden Направления деятельности компании, услуги и прочее
         ul(class=`${className}__list`)
-          each logo, value in logos
+          each picture, value in pictures
             li(class=`${className}__item`)
-              a(href=logo.url, class=`${className}__link` aria-label=logo.label)
               picture
-                source(type='image/webp', srcset=`img/${logo.imgSrc}.webp`)
-                img(class=`${className}__img` src=`img/${logo.imgSrc}.png`, alt=logo.label)
+                source(type='image/webp', srcset=`img/${picture.src}.webp`)
+                img(class=`${className}__img`, src=`img/${picture.src}.png`, alt=picture.caption)
+              p(class=`${className}__caption`)= picture.caption
+              p(class=`${className}__notice`)= picture.annotation
+              a(href="#", class=`${className}__link` aria-label=picture.caption)
+
 
 // brands/parthers/customers/technologies
 mixin logoList(className)
@@ -77,7 +80,29 @@ mixin logoList(className)
               a(href=logo.url, class=`${className}__link` aria-label=logo.label)
               picture
                 source(type='image/webp', srcset=`img/${logo.imgSrc}.webp`)
-                img(class=`${className}__img` src=`img/${logo.imgSrc}.png`, alt=logo.label)
+                img(class=`${className}__img`, src=`img/${logo.imgSrc}.png`, alt=logo.label)
+
+// map
+mixin map
+  section.contacts
+    h2.visually-hidden= contacts.title
+    .contacts__wrap
+      #map.contacts__map
+        picture.contacts__map-img
+          source(type='image/webp', srcset=`img/content/${contacts.imgSrc}.webp`)
+          img(src=`img/content/${contacts.imgSrc}.jpg`, alt=`Офис компании по адресу ул. ${contacts.adress}, ${contacts.city}`)
+      .contacts__info
+        p.contacts__name= contacts.name
+        p.contacts__adress= `${contacts.index}, ${contacts.city}, ${contacts.adress}`
+        p.contacts__phone= `тел. ${contacts.phone}`
+        a.btn.contacts__btn(href='write-us.html') Напишите нам
+
+//FORMS
+
+// feedback
+//mixin feedback
+
+
 
 //- mixin nav (className, name, items)
 //-   nav(class=`${className}`)
