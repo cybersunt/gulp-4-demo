@@ -43,7 +43,7 @@ mixin promoBlock(className)
             li(class=`${className}__item`)
               p(class=`${className}__caption`)= ad.caption
               p(class=`${className}__desc`)= ad.description
-              a.btn(class=`${className}__btn`,href=ad.url)= ad.captionBtn
+              a.btn(class=`${className}__btn`, href=ad.url)= ad.captionBtn
                 img(class=`${className}__img` src=`img/${ad.imgSrc}.jpg`, alt=ad.imgAlt)
         div(class=`${className}__toggles`)
           button(class=`${className}__toggle ${className}__toggle--checked` type='button', aria-label='Первый слайд')
@@ -97,19 +97,25 @@ mixin map
         p.contacts__phone= `тел. ${contacts.phone}`
         a.btn.contacts__btn(href='write-us.html') Напишите нам
 
-//CATALOG
-
-//categories
-mixin catalogList(className)
+//CATALOG: categories/goods/cardProducts/services/hotels
+mixin catalogList(className, namePage, items, classNameGoods)
   section(class=`${className}`)
-    h1(class=`${className}__caption`) Каталог
+    h1(class=`${className}__caption`)=namePage
     div(class=`${className}__wrap`)
       ul(class=`${className}__list`)
-        each category, value in categories
-          li(class=`${className}__item`)
-            a(class=`${className}__link`, href=`${category.name}`)
-              img(class=class=`${className}__category-img` src=`${category.preview}`, alt==`${category.name}`)
-              h2(class=`${className}__category-name`)= category.name
+        each item, value in items
+          if items === categories
+            li(class=`${className}__item category`)
+              a(class='category__link', href=`${item.link}`)
+                img(class='category__img', src=`${item.preview}`, alt=`${item.name}`)
+                h2(class='category__name')=item.name
+          else if items === goods
+            li(class=`${className}__item ${classNameGoods}`)
+              a(class=`${classNameGoods}__link`, href=`${item.link}`)
+                img(class=`${classNameGoods}__img`, src=`${item.imgPreview}`, alt=`${item.name}`)
+                h3(class=`${classNameGoods}__name`)=item.name
+                p(class=`${classNameGoods}__description`)=item.description
+              p(class=`${classNameGoods}__price`)= `${item.price} руб.`
 
 //FORMS
 

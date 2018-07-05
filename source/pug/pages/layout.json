@@ -38,7 +38,8 @@
 	"goods": [
 		{
 			"name": "Раз",
-			"desctiption": " Какое-то описание товара",
+			"description": "Какое-то описание товара",
+			"link": "#",
 			"price": 1000,
 			"imgSrc": "https://place-hold.it/300x300/83000&bold",
 			"imgPreview": "https://place-hold.it/150x100/83000"

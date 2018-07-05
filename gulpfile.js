@@ -4,6 +4,7 @@ const gulp = require('gulp'),
       fs = require('fs'),
       del = require('del'),
       bemify = require('pug-bemify'),
+      removeEmptyLines = require('gulp-remove-empty-lines'),
       merge = require('gulp-merge-json');
 
 const config = {
@@ -59,6 +60,9 @@ gulp.task('pug', () => {
     'time', 'u', 'var', 'wbr', 'text', 'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt'
     ]
   }))
+  .pipe(removeEmptyLines({
+      removeComments: true
+    }))
   .pipe(gulp.dest(config.ready))
   .pipe(browserSync.reload({stream : true}));
 });
