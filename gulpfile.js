@@ -16,12 +16,12 @@ const config = {
     data: '/pug/data/',
     json: '/pug/pages/'
   },
-  img: '/**/*'
+  img: '/img/**/*'
 };
 
 gulp.task('copy', () => {
   return gulp.src(config.dev + config.img)
-  .pipe(gulp.dest(config.ready));
+  .pipe(gulp.dest(config.ready + '/img'));
 });
 
 gulp.task('clean', () => {

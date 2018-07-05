@@ -82,6 +82,26 @@ mixin logoList(className)
                 source(type='image/webp', srcset=`img/${logo.imgSrc}.webp`)
                 img(class=`${className}__img`, src=`img/${logo.imgSrc}.png`, alt=logo.label)
 
+// pagination
+mixin pagination(amount, current)
+  section.pagination
+    h2.visually-hidden Пагинация
+      ul.pagination__list
+        - for (var index = 0; index <= amount; index ++)
+          case index
+            when 0
+              li.pagination__item
+                a.pagination__link.pagination__link--prev(href="#") Предыдущая
+            when amount
+              li.pagination__item
+                a.pagination__link.pagination__link--next(href="#") Следующая
+            when current
+              li.pagination__item
+                a.pagination__link.pagination__link--current(href="#")=index
+            default
+              li.pagination__item
+                a.pagination.__link(href="#")= index
+
 // map
 mixin map
   section.contacts
