@@ -1,0 +1,21 @@
+extends ../base/basic-templ
+
+block vars
+  - var currentPage = 'Главная'
+  - var title = 'Главная страница'
+  - var description = 'Описание главной страницы'
+
+block content
+  main.page-inner
+    +catalogList('services')
+
+    section.goods
+      h1.__caption Товары
+      .__wrap
+        ul.__list
+          each good, value in goods
+            li.__item
+              a.__link(href=`${good.name}`)
+                img.__category-img(src=`${good.preview}`)
+                h3.__category-name= good.name
+

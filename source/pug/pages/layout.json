@@ -13,6 +13,37 @@
 		"sendOff": "Отправить",
 		"close": "Закрыть"
 	},
+	"categories": [
+		{
+			"name": "Первая",
+			"link": "#",
+			"preview": "https://place-hold.it/150x100/83000&bold"
+		},
+		{
+			"name": "Вторая",
+			"link": "#",
+			"preview": "https://place-hold.it/150x100/83000&bold"
+		},
+		{
+			"name": "Третья",
+			"link": "#",
+			"preview": "https://place-hold.it/150x100/83000&bold"
+		},
+		{
+			"name": "Четвертая",
+			"link": "#",
+			"preview": "https://place-hold.it/150x100/83000&bold"
+		}
+	],
+	"goods": [
+		{
+			"name": "Раз",
+			"desctiption": " Какое-то описание товара",
+			"price": 1000,
+			"imgSrc": "https://place-hold.it/300x300/83000&bold",
+			"imgPreview": "https://place-hold.it/150x100/83000"
+		}
+	],
 	"contacts": {
 		"title": "Контакты",
 		"name": "Название компании",

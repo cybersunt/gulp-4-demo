@@ -20,24 +20,7 @@ block content
 
     +map
 
-    .overlay
-    section.feedback
-      .feedback__wrap
-        h2.feedback__title Напишите нам
-        form.feedback__form(action='https://echo.htmlacademy.ru', method='post')
-          each feedback, value in feedbacks
-            p.feedback__layout
-              label.feedback__label(for=`${feedback.id}`)= feedback.label
-                if feedback.id !== "message"
-                  if feedback.required === true
-                    input.feedback__field(id=`${feedback.id}`, placeholder=`${feedback.placeholder}`, type=`${feedback.type}`, name=`${feedback.name}` required)
-                  else
-                     input.feedback__field(id=`${feedback.id}`, placeholder=`${feedback.placeholder}`, type=`${feedback.type}`, name=`${feedback.name}`)
-                else
-                  textarea.feedback__textarea(id=`${feedback.id}`, placeholder=`${feedback.placeholder}`, name=`${feedback.name}`)
+block forms
+  +feedback
 
-          button.btn.feedback__send(type='submit')= btns.sendOff
-        button.feedback__close(type='button', aria-label= `${btns.close}`)
-          svg.feedback__close-icon(width='21', height='21', aria-labelledby='feedback__close-title')
-            title#feedback__close-title Закрыть
-               use(xlink:href='#close-cross')
+
