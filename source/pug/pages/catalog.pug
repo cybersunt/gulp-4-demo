@@ -4,30 +4,26 @@ block vars
   - var currentPage = 'Главная'
   - var title = 'Главная страница'
   - var description = 'Описание главной страницы'
-  - var amount = 9
-  - var current= 1
 
 
 block content
   main.page-inner
+    section.catalog-filter
+      h2.visually-hidden Фильтр каталога
+      form.filter(method='get', action='#')
+
+        fieldset.filter__fieldset
+          legend.filter__title Стоимость
+           +rangePrice
+
+        fieldset.filter__fieldset
+          legend.filter__title Сетка
+            +radioButtons('grid', radiobuttons)
+
+        fieldset.filter__fieldset
+          legend.filter__title Модули
+            +checkBoxes(checkboxes)
+
     +catalogList('services', 'Категории', categories)
     +catalogList('hotels', 'Отели', goods, 'hotel')
     +pagination(5, 1)
-
-    //section.pagination
-    //  h2.visually-hidden Пагинация
-    //    ul.pagination__list
-    //      - for (var index = 0; index <= amount; index ++)
-    //        case index
-    //          when 0
-    //            li.pagination__item
-    //              a.pagination__link.pagination__link--prev(href="#") Предыдущая
-    //          when amount
-    //            li.pagination__item
-    //              a.pagination__link.pagination__link--next(href="#") Следующая
-    //          when current
-    //            li.pagination__item
-    //              a.pagination__link.pagination__link--current(href="#")=index
-    //          default
-    //            li.pagination__item
-    //              a.pagination.__link(href="#")= index

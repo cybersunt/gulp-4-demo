@@ -13,6 +13,56 @@
 		"sendOff": "Отправить",
 		"close": "Закрыть"
 	},
+	"filter": {
+		"maxPrice": 30000,
+		"stepPrice": 200
+	},
+	"radiobuttons": [
+		{
+			"id": "adaptive",
+			"value": "adaptive",
+			"label": "Адаптивая",
+			"checked": true
+		},
+		{
+			"id": "fixed",
+			"value": "fixed",
+			"label": "Фиксированная",
+			"checked": false
+		},
+		{
+			"id": "rubber",
+			"value": "rubber",
+			"label": "Резиновая",
+			"checked": false
+		}
+	],
+	"checkboxes": [
+		{
+			"id": "slider",
+			"name": "slider",
+			"label": "Слайдер",
+			"checked": true
+		},
+		{
+			"id": "catalog",
+			"name": "catalog",
+			"label": "Каталог",
+			"checked": false
+		},
+		{
+			"id": "news",
+			"name": "news",
+			"label": "Новости",
+			"checked": true
+		},
+		{
+			"id": "basket",
+			"name": "basket",
+			"label": "Корзина",
+			"checked": false
+		}
+	],
 	"categories": [
 		{
 			"name": "Первая",
@@ -91,11 +141,6 @@
 			"id": "message",
 			"label": "Текст письма:",
 			"placeholder": "В свободной форме"
-		}
-	],
-	"buttons": [
-		{
-			"send": "Отправить"
 		}
 	],
 	"logos": [

@@ -32,6 +32,55 @@
     </div>
   </header>
   <main class="page-inner">
+    <section class="catalog-filter">
+      <h2 class="visually-hidden">Фильтр каталога</h2>
+      <form class="filter" method="get" action="#">
+        <fieldset class="filter__fieldset">
+          <legend class="filter__title">Стоимость
+            <label class="visually-hidden" for="price">Шкала стоимости
+              <input id="price" type="range" name="price" min="0" max="30000" step="200" />
+            </label>
+            <div class="filter-price__range-controls">
+              <div class="filter-price__scale">
+                <div class="filter-price__bar"></div>
+              </div>
+              <button class="filter-price__toggle filter-price__toggle--toggle-min"></button>
+              <buttom class="filter-price__toggle filter-price__toggle--toggle-max"></buttom>
+            </div>
+            <div class="filter-price__controls">
+              <label class="filter-price__price filter-price__price--min" for="min-price">от
+                <input class="filter-price__input" id="min-price" type="number" value="0" min="0" />
+              </label>
+              <label class="filter-price__price filter-price__price--max" for="max-price">до
+                <input class="filter-price__input" id="max-price" type="number" value="30000" max="30000" />
+              </label>
+            </div>
+          </legend>
+        </fieldset>
+        <fieldset class="filter__fieldset">
+          <legend class="filter__title">Сетка
+            <input class="filter__radio" id="adaptive" name="grid" value="adaptive" type="radio" checked="" />
+            <label class="filter__value" for="adaptive" onmousedown="return false" tabindex="0">Адаптивая</label>
+            <input class="filter__radio" id="fixed" name="grid" value="fixed" type="radio" />
+            <label class="filter__value" for="fixed" onmousedown="return false" tabindex="0">Фиксированная</label>
+            <input class="filter__radio" id="rubber" name="grid" value="rubber" type="radio" />
+            <label class="filter__value" for="rubber" onmousedown="return false" tabindex="0">Резиновая</label>
+          </legend>
+        </fieldset>
+        <fieldset class="filter__fieldset">
+          <legend class="filter__title">Модули
+            <input class="filter__radio" id="slider" name="slider" type="checkbox" checked="" />
+            <label class="filter__value" for="slider" onmousedown="return false" tabindex="0">Слайдер</label>
+            <input class="filter__radio" id="catalog" name="catalog" type="checkbox" />
+            <label class="filter__value" for="catalog" onmousedown="return false" tabindex="0">Каталог</label>
+            <input class="filter__radio" id="news" name="news" type="checkbox" checked="" />
+            <label class="filter__value" for="news" onmousedown="return false" tabindex="0">Новости</label>
+            <input class="filter__radio" id="basket" name="basket" type="checkbox" />
+            <label class="filter__value" for="basket" onmousedown="return false" tabindex="0">Корзина</label>
+          </legend>
+        </fieldset>
+      </form>
+    </section>
     <section class="services">
       <h1 class="services__caption">Категории</h1>
       <div class="services__wrap">
