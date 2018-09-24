@@ -9,28 +9,27 @@ global.$ = {
     task: require('./gulp/paths/tasks.js')
   },
 
-  config: {
-    ready: './public',
-    dev: './source',
-    pug: {
-      watch: '/pug/**/*.pug',
-      src:'/pug/pages/**/*.pug',
-      data: '/pug/data/',
-      json: '/pug/pages/'
-    },
-    img: '/img/**/*'
-  }
+  config: require('./gulp/paths/sources.js')
 };
 
 $.path.task.forEach(function(taskPath) {
   require(taskPath)();
 });
 
+$.gulp.task('build', $.gulp.series(
+  'clean',
+  'copy',
+  'data',
+  'pug',
+  'scss:build'
+));
+
 $.gulp.task('default', $.gulp.series(
   'clean',
   'copy',
   'data',
   'pug',
+  'scss:dev',
   $.gulp.parallel(
     'watch',
     'server'
