@@ -1,10 +1,9 @@
 module.exports = [
-  './gulp/tasks/clean.js',
-  './gulp/tasks/copy.js',
+  './gulp/tasks/clean',
+  './gulp/tasks/copy',
 
-  './gulp/tasks/data.js',
-  './gulp/tasks/pug.js',
+  './gulp/tasks/pug',
 
-  './gulp/tasks/server.js',
-  './gulp/tasks/watch.js'
+  './gulp/tasks/server',
+  './gulp/tasks/watch'
 ];

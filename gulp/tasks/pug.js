@@ -1,7 +1,17 @@
-const bemify = require('pug-bemify'),
+const merge = require('gulp-merge-json'),
+      bemify = require('pug-bemify'),
       removeEmptyLines = require('gulp-remove-empty-lines');
 
 module.exports = function () {
+  $.gulp.task('data', () => {
+    return $.gulp.src($.config.dev + $.config.pug.data + '*json')
+      .pipe(merge({
+        fileName: 'layout.json'
+      }))
+      .pipe($.gulp.dest($.config.dev + $.config.pug.json))
+      .pipe($.browserSync.reload({stream: true}));
+  });
+
   $.gulp.task('pug', () => {
     return $.gulp.src($.config.dev + $.config.pug.src)
       .pipe($.gp.pug({
@@ -31,4 +41,4 @@ module.exports = function () {
       .pipe($.gulp.dest($.config.ready))
       .pipe($.browserSync.reload({stream : true}));
   });
-}
+};
