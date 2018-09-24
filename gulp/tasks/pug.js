@@ -1,21 +1,25 @@
 const merge = require('gulp-merge-json'),
       bemify = require('pug-bemify'),
-      removeEmptyLines = require('gulp-remove-empty-lines');
+      removeEmptyLines = require('gulp-remove-empty-lines'),
+
+      sourceFileJson = $.config.dev + $.config.pug.data,
+      outputFileJson =  $.config.dev + $.config.pug.json,
+      sourceFilePug = $.config.dev + $.config.pug.src;
 
 module.exports = function () {
   $.gulp.task('data', () => {
-    return $.gulp.src($.config.dev + $.config.pug.data + '*json')
+    return $.gulp.src(sourceFileJson + '*json')
       .pipe(merge({
         fileName: 'layout.json'
       }))
-      .pipe($.gulp.dest($.config.dev + $.config.pug.json))
+      .pipe($.gulp.dest(outputFileJson))
       .pipe($.browserSync.reload({stream: true}));
   });
 
   $.gulp.task('pug', () => {
-    return $.gulp.src($.config.dev + $.config.pug.src)
+    return $.gulp.src(sourceFilePug)
       .pipe($.gp.pug({
-        locals : JSON.parse($.fs.readFileSync($.config.dev + $.config.pug.json + 'layout.json', 'utf8')),
+        locals : JSON.parse($.fs.readFileSync(outputFileJson + 'layout.json', 'utf8')),
         pretty: true,
         plugins : [bemify()]
       }))
