@@ -1,16 +1,10 @@
 module.exports = {
   ready: './public',
-    css: '/css',
-    dev: './source',
-    pug: {
-    watch: '/pug/**/*.pug',
-      src: '/pug/pages/**/*.pug',
-      data: '/pug/data/',
-      json: '/pug/pages/'
-  },
-  scss: {
-    watch: '/scss/**/*.scss',
-      output: '/scss/paths/style.scss'
+  dev: './source',
+  watch: {
+    json: '/pug/data/',
+    pug: '/pug/**/*.pug',
+    scss: '/scss/**/*.scss'
   },
   img: '/img/**/*'
 };

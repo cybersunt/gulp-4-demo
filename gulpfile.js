@@ -19,7 +19,7 @@ $.path.task.forEach(function(taskPath) {
 $.gulp.task('build', $.gulp.series(
   'clean',
   'copy',
-  'data',
+  'json',
   'pug',
   'scss:build'
 ));
@@ -27,7 +27,7 @@ $.gulp.task('build', $.gulp.series(
 $.gulp.task('default', $.gulp.series(
   'clean',
   'copy',
-  'data',
+  'json',
   'pug',
   'scss:dev',
   $.gulp.parallel(
