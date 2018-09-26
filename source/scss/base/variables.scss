@@ -1,9 +1,25 @@
 //colors
 $black: black;
 $white: white;
+$aliceblue: aliceblue;
 $deepskyblue: deepskyblue;
 $lime: lime;
 $royalblue: royalblue;
+$darkblue: darkblue;
 
 $content-color: $royalblue;
 $global-bg: $white;
+
+$font-face: 'PT Sans', Arial, sans-serif;
+
+@mixin text($font-size: 14px, $line-height: 16px) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin list-row {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
