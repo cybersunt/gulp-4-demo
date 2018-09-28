@@ -38,13 +38,13 @@ mixin promoBlock(className)
   section(class=`${className}`)
     div(class=`${className}__wrap`)
       h2.visually-hidden Заголовок что это
-        ul(class=`${className}__list`)
-          each ad, value in ads
-            li(class=`${className}__item`)
-              p(class=`${className}__caption`)= ad.caption
-              p(class=`${className}__desc`)= ad.description
-              a.btn(class=`${className}__btn`, href=ad.url)= ad.captionBtn
-                img(class=`${className}__img` src=`img/${ad.imgSrc}.jpg`, alt=ad.imgAlt)
+      ul(class=`${className}__list`)
+      each ad, value in ads
+        li(class=`${className}__item`)
+          p(class=`${className}__caption`)= ad.caption
+          p(class=`${className}__desc`)= ad.description
+          a.btn(class=`${className}__btn`, href=ad.url)= ad.captionBtn
+          img(class=`${className}__img` src=`img/${ad.imgSrc}.jpg`, alt=ad.imgAlt)
         div(class=`${className}__toggles`)
           button(class=`${className}__toggle ${className}__toggle--checked` type='button', aria-label='Первый слайд')
           button(class=`${className}__toggle` type='button', aria-label='Второй слайд')
