@@ -7,6 +7,22 @@
 			"imgAlt": "Какой-нибудь текст о картинке",
 			"imgSrc": "slide01",
 			"url": "catalog.html"
+		},
+		{
+			"caption": "Заголовок второго слайда",
+			"description": "Описание второго слайда",
+			"captionBtn": "Кнопка",
+			"imgAlt": "Какой-нибудь текст на второй картинке",
+			"imgSrc": "slide02",
+			"url": "catalog.html"
+		},
+		{
+			"caption": "Заголовок третьго слайда",
+			"description": "Описание торетьего слайда",
+			"captionBtn": "Кнопка",
+			"imgAlt": "Какой-нибудь текст на 3 картинке",
+			"imgSrc": "slide03",
+			"url": "catalog.html"
 		}
 	],
 	"btns": {
