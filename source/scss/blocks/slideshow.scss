@@ -1,0 +1,11 @@
+.slideshow {
+  position: relative;
+  background: bisque;
+
+  &__wrap {
+    @include container;
+  }
+  &__list {
+    @include ul-reset;
+  }
+}
