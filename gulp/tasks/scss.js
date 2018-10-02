@@ -14,6 +14,9 @@ module.exports = function () {
           message:  error.message
         }
       }))
+      .pipe($.gp.postcss([
+        autoprefixer('last 2 version')
+      ]))
       .pipe($.gp.plumber())
       .pipe($.gp.sourcemaps.write())
       .pipe($.gulp.dest(outputDirCss))

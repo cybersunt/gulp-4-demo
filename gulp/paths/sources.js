@@ -4,7 +4,8 @@ module.exports = {
   watch: {
     json: '/pug/data/',
     pug: '/pug/**/*.pug',
-    scss: '/scss/**/*.scss'
+    scss: '/scss/**/*.scss',
+    img: '/img/**/*'
   },
   img: '/img/**/*'
 };

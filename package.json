@@ -41,6 +41,7 @@
     "pug-bemify": "^1.0.4"
   },
   "dependencies": {
+    "normalize": "^0.3.1",
     "npm": "^6.4.1"
   }
 }
