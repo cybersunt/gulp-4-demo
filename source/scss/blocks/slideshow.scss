@@ -5,18 +5,18 @@
     @include ul-reset;
   }
   &__item {
-    position: relative;
     display: none;
+    position: relative;
     &--active {
       display: block;
     }
   }
   &__wrap {
     @include wh(100%);
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
     padding: 40px 60px;
   }
   &__text {
