@@ -2,24 +2,25 @@
   "ads": [
   	{
       "caption": "Заголовок первого слайда",
-      "description": "Описание первого слайда",
-      "captionBtn": "Кнопка",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae mattis arcu. Vestibulum convallis aliquet nibh, feugiat fringilla purus semper quis. Sed egestas arcu eu gravida ornare. Quisque sollicitudin lobortis felis eget dapibus. Nam finibus lacinia ultrices. Nulla in eros vulputate, cursus libero eget, scelerisque metus. Donec erat ipsum, dignissim non facilisis sit amet, efficitur congue leo. Phasellus feugiat pharetra auctor.",
+      "captionBtn": "Нажать на кнопку",
       "imgAlt": "Какой-нибудь текст о картинке",
       "imgSrc": "slide01",
-      "url": "catalog.html"
+      "url": "catalog.html",
+      "active": true
     },
     {
       "caption": "Заголовок второго слайда",
-      "description": "Описание второго слайда",
-      "captionBtn": "Кнопка",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae mattis arcu. Vestibulum convallis aliquet nibh, feugiat fringilla purus semper quis. Sed egestas arcu eu gravida ornare. Quisque sollicitudin lobortis felis eget dapibus. Nam finibus lacinia ultrices. Nulla in eros vulputate, cursus libero eget, scelerisque metus. Donec erat ipsum, dignissim non facilisis sit amet, efficitur congue leo. Phasellus feugiat pharetra auctor.",
+      "captionBtn": "Нажать на кнопку",
       "imgAlt": "Какой-нибудь текст на второй картинке",
       "imgSrc": "slide02",
       "url": "catalog.html"
     },
     {
       "caption": "Заголовок третьго слайда",
-      "description": "Описание торетьего слайда",
-      "captionBtn": "Кнопка",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae mattis arcu. Vestibulum convallis aliquet nibh, feugiat fringilla purus semper quis. Sed egestas arcu eu gravida ornare. Quisque sollicitudin lobortis felis eget dapibus. Nam finibus lacinia ultrices. Nulla in eros vulputate, cursus libero eget, scelerisque metus. Donec erat ipsum, dignissim non facilisis sit amet, efficitur congue leo. Phasellus feugiat pharetra auctor.",
+      "captionBtn": "Нажать на кнопку",
       "imgAlt": "Какой-нибудь текст на 3 картинке",
       "imgSrc": "slide03",
       "url": "catalog.html"
