@@ -17,18 +17,24 @@ $font-face: 'PT Sans', Arial, sans-serif;
   line-height: $line-height;
 }
 
-@mixin list-row {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
 @mixin ul-reset {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
+@mixin list-row {
+  @include ul-reset;
+  display: flex;
+}
+
+@mixin list-item ($right: null, $bottom: null){
+  &:not(:last-child) {
+    margin-right: $right;
+    margin-bottom: $bottom;
+  }
+}
+
 
 @mixin container {
   padding-left: 40px;

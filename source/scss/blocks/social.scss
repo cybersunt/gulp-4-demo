@@ -1,0 +1,7 @@
+.social {
+  @include list-row;
+
+  &__item {
+    @include list-item(10px);
+  }
+}
