@@ -68,15 +68,15 @@ mixin featuresList(className)
   section(class=`${className}`)
     div(class=`${className}__wrap`)
       h2.visually-hidden Направления деятельности компании, услуги и прочее
-        ul(class=`${className}__list`)
-          each picture, value in pictures
-            li(class=`${className}__item`)
-              picture
-                source(type='image/webp', srcset=`img/${picture.src}.webp`)
-                img(class=`${className}__img`, src=`img/${picture.src}.png`, alt=picture.caption)
-              p(class=`${className}__caption`)= picture.caption
-              p(class=`${className}__notice`)= picture.annotation
-              a(href="#", class=`${className}__link` aria-label=picture.caption)
+      ul(class=`${className}__list`)
+        each picture, value in pictures
+          li(class=`${className}__item`)
+            picture
+              source(type='image/webp', srcset=`img/${picture.src}.webp`)
+              img(class=`${className}__img`, src=`img/${picture.src}.png`, alt=picture.caption)
+            p(class=`${className}__caption`)= picture.caption
+            p(class=`${className}__notice`)= picture.annotation
+            a(href="#", class=`${className}__link` aria-label=picture.caption)
 
 
 // brands/parthers/customers/technologies
@@ -84,10 +84,10 @@ mixin logoList(className)
   section(class=`${className}`)
     div(class=`${className}__wrap`)
       h2.visually-hidden Используемые технологии в проекте
-        ul(class=`${className}__list`)
-          each logo, value in logos
-            li(class=`${className}__item`)
-              a(href=logo.url, class=`${className}__link` aria-label=logo.label)
+      ul(class=`${className}__list`)
+        each logo, value in logos
+          li(class=`${className}__item`)
+            a(href=logo.url, class=`${className}__link` aria-label=logo.label)
               picture
                 source(type='image/webp', srcset=`img/${logo.imgSrc}.webp`)
                 img(class=`${className}__img`, src=`img/${logo.imgSrc}.png`, alt=logo.label)
@@ -96,21 +96,21 @@ mixin logoList(className)
 mixin pagination(amount, current)
   section.pagination
     h2.visually-hidden Пагинация
-      ul.pagination__list
-        - for (var index = 0; index <= amount; index ++)
-          case index
-            when 0
-              li.pagination__item
-                a.pagination__link.pagination__link--prev(href="#") Предыдущая
-            when amount
-              li.pagination__item
-                a.pagination__link.pagination__link--next(href="#") Следующая
-            when current
-              li.pagination__item
-                a.pagination__link.pagination__link--current(href="#")=index
-            default
-              li.pagination__item
-                a.pagination.__link(href="#")= index
+    ul.pagination__list
+      - for (var index = 0; index <= amount; index ++)
+        case index
+          when 0
+            li.pagination__item
+              a.pagination__link.pagination__link--prev(href="#") Предыдущая
+          when amount
+            li.pagination__item
+              a.pagination__link.pagination__link--next(href="#") Следующая
+          when current
+            li.pagination__item
+              a.pagination__link.pagination__link--current(href="#")=index
+          default
+            li.pagination__item
+              a.pagination.__link(href="#")= index
 
 // map
 mixin map

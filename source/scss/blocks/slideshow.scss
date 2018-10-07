@@ -71,7 +71,7 @@
     &:before,
     &:after {
       @include wh(3px, 40px);
-      @include position(absolute, null, $right: 13px);
+      @include position(absolute, $right: 13px);
       content: '';
       background: aliceblue;
     }
