@@ -1,5 +1,8 @@
 .social {
   @include list-row;
+  justify-content: center;
+  flex: 1 0 ;
+  margin-right: 40px;
 
   &__item {
     @include list-item(10px);
