@@ -34,3 +34,48 @@ $font-face: 'PT Sans', Arial, sans-serif;
   padding-left: 40px;
   padding-right: 40px;
 }
+
+@mixin position($position, $top: null, $left: null, $right: null, $bottom: null) {
+  position: $position;
+  left: $left;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+}
+
+@mixin wh($width: null, $height: null){
+  width: $width;
+  height: $height;
+
+  @if $height == null {
+    width: $width;
+    height: $width;
+  }
+}
+
+@mixin ib {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@mixin btn {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+@mixin btn-link {
+  padding: 7px 10px 9px;
+  border: 1px solid #ff5d04;
+  border-radius: 8px;
+  background-color: coral;
+
+  &:focus,
+  &:hover {
+    background-color: #ff5d04;
+    border-color: coral;
+  }
+  &:active {
+    background-color: #ff4000;
+  }
+}

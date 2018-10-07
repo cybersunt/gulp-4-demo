@@ -1,11 +1,101 @@
 .slideshow {
   position: relative;
   background: bisque;
-
-  &__wrap {
-    @include container;
-  }
   &__list {
     @include ul-reset;
+  }
+  &__item {
+    display: none;
+    position: relative;
+    &--active {
+      display: block;
+    }
+  }
+  &__wrap {
+    @include wh(100%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 60px;
+  }
+  &__text {
+    text-align: center;
+    color: $white;
+  }
+  &__desc {
+    @include text(18px, 25px);
+    text-align: left;
+  }
+
+  &__img {
+    width: 100%;
+  }
+  &__caption {
+    @include text(50px, 50px);
+    font-weight: bold;
+    color: $royalblue;
+  }
+  &__btn {
+    @include ib;
+    @include btn-link;
+    @include text(18px, 18px);
+    color: $white;
+    font-weight: bolder;
+  }
+  &__toggles {
+    position: absolute;
+    width: 100%;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  &__toggle {
+    @include wh(20px);
+    @include btn;
+    border-radius: 50%;
+    background-color: aliceblue;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  &__arrows {
+    @include position(absolute, 50%);
+    width: 100%;
+    margin-top: -20px;
+  }
+  &__arrow {
+    @include wh(30px, 60px);
+    @include btn;
+    position: absolute;
+    &:before,
+    &:after {
+      @include wh(3px, 40px);
+      @include position(absolute, null, $right: 13px);
+      content: '';
+      background: aliceblue;
+    }
+    &--prev {
+      left: 20px;
+      &:before {
+        transform: rotate(45deg);
+        top: -3px;
+      }
+      &:after {
+        transform: rotate(-45deg);
+        bottom: -3px;
+      }
+    }
+    &--next {
+      right: 20px;
+      &:before {
+        transform: rotate(-135deg);
+        bottom: -3px;
+      }
+      &:after {
+        transform: rotate(135deg);
+        top: -3px;
+      }
+    }
   }
 }
