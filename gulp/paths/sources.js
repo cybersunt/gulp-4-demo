@@ -3,6 +3,7 @@ module.exports = {
   dev: './source',
   watch: {
     json: '/pug/data/',
+    layout: '/pug/pages/layout.json',
     pug: '/pug/**/*.pug',
     scss: '/scss/**/*.scss',
     img: '/img/**/*'
