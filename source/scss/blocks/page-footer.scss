@@ -1,8 +1,8 @@
 .page-footer {
+  @include wrapper(flex, flex-start, center);
   background: aliceblue;
+
   &__wrap {
-    @include flex-box(flex-start, center);
-    padding: 0 40px;
     min-height: 50px;
     height: 50px;
   }
