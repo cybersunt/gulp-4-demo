@@ -35,13 +35,13 @@ $font-face: 'PT Sans', Arial, sans-serif;
   }
 }
 
-
-@mixin container {
-  padding-left: 40px;
-  padding-right: 40px;
+@mixin flex-box($justify: null, $align: null) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
 }
 
-@mixin position($position, $top: null, $left: null, $right: null, $bottom: null) {
+@mixin position($position, $top: null, $left: null, $right: null, $bottom: null){
   position: $position;
   left: $left;
   top: $top;

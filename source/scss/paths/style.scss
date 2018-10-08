@@ -1,11 +1,12 @@
 //library
 @import '../../node_modules/normalize.css/normalize.css';
 //basic styles
-@import '../../base/variables';
-@import '../../base/global';
+@import '../base/variables.scss';
+@import '../base/global.scss';
 // block of BEM
-@import '../page-header';
-@import '../main-nav';
-@import '../slideshow';
-@import '../page-footer';
-@import '../social';
+@import '../blocks/page-header.scss';
+@import '../blocks/main-nav.scss';
+@import '../blocks/slideshow.scss';
+@import '../blocks/page-footer.scss';
+@import '../blocks/social.scss';
+@import '../blocks/copyryght.scss';
