@@ -1,0 +1,35 @@
+.services {
+  @include wrapper;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &__list {
+    @include ul-reset;
+    @include flex-box(space-between, center);
+  }
+
+  &__item {
+    @include list-item;
+    width: 350px;
+    text-align: center;
+  }
+
+  &__caption {
+    @include text(24px, 30px);
+    color: $black;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  &__img {
+    background-color: $white;
+    width: 100%;
+    max-height: 235px;
+  }
+  &__link {
+    @include text (16px, 16px);
+    color: $white;
+    @include btn-link;
+  }
+}
+
+

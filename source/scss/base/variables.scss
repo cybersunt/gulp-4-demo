@@ -41,6 +41,18 @@ $font-face: 'PT Sans', Arial, sans-serif;
   align-items: $align;
 }
 
+@mixin wrapper ($display: null, $justify: null, $align: null) {
+  &__wrap {
+    @if $display == null {
+      padding: 0 40px;
+    }
+    @else {
+      @include flex-box($justify,  $align);
+      padding: 0 40px;
+    }
+  }
+}
+
 @mixin position($position, $top: null, $left: null, $right: null, $bottom: null){
   position: $position;
   left: $left;

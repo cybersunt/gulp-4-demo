@@ -124,8 +124,18 @@
 	"pictures": [
 		{
 			"caption": "Веб-сайты",
-			"annotation": "Мир никогда не будет прежним после того как увидит ваш сайт!",
-			"src": "picture"
+			"annotation": "",
+			"src": "web-sites"
+		},
+		{
+			"caption": "Мобильные приложения",
+			"annotation": "",
+			"src": "mobile-apps"
+		},
+		{
+			"caption": "Интернет-маркетинг",
+			"annotation": "",
+			"src": "marketing"
 		}
 	],
 	"feedbacks": [
