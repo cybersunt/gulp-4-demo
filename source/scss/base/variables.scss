@@ -41,6 +41,10 @@ $font-face: 'PT Sans', Arial, sans-serif;
   align-items: $align;
 }
 
+@mixin flex-center($justify: null, $align: null) {
+  @include flex-box(center, center);
+}
+
 @mixin wrapper ($display: null, $justify: null, $align: null) {
   &__wrap {
     @if $display == null {
@@ -51,6 +55,12 @@ $font-face: 'PT Sans', Arial, sans-serif;
       padding: 0 40px;
     }
   }
+}
+
+@mixin hr {
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 3px dashed #e0e0e0;
 }
 
 @mixin position($position, $top: null, $left: null, $right: null, $bottom: null){

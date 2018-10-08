@@ -1,0 +1,26 @@
+.technologies {
+  @include wrapper;
+  @include hr;
+
+  &__caption {
+    @include text(30px, 30px);
+    text-align: center;
+    text-transform: uppercase;
+    color: cornflowerblue;
+  }
+
+  &__list {
+    @include list-row;
+    @include flex-box(space-between, center);
+  }
+
+  &__item {
+    @include list-item(30px);
+    @include wh(100px, auto);
+    @include flex-center;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}

@@ -172,9 +172,44 @@
 	],
 	"logos": [
 		{
-			"url": "https://nexign-systems.com/ru",
-			"label": "Петер Сервсис",
-			"imgSrc": "nexign"
+			"url": "#",
+			"label": "HTML + CSS + JS",
+			"imgSrc": "base"
+		},
+		{
+			"url": "http://pugjs.com",
+			"label": "Pug",
+			"imgSrc": "pug"
+		},
+		{
+			"url": "#",
+			"label": "Sass",
+			"imgSrc": "sass"
+		},
+		{
+			"url": "#",
+			"label": "Less",
+			"imgSrc": "less"
+		},
+		{
+			"url": "#",
+			"label": "Stylus",
+			"imgSrc": "Stylus"
+		},
+		{
+			"url": "#",
+			"label": "Gulp",
+			"imgSrc": "gulp"
+		},
+		{
+			"url": "#",
+			"label": "Node JS",
+			"imgSrc": "node"
+		},
+		{
+			"url": "#",
+			"label": "NPM",
+			"imgSrc": "npm"
 		}
 	],
 	"mainNav": {

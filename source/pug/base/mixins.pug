@@ -67,7 +67,7 @@ mixin promoBlock(className)
 mixin featuresList(className)
   section(class=`${className}`)
     div(class=`${className}__wrap`)
-      h2.visually-hidden Направления деятельности компании, услуги и прочее
+      h2 Услуги или преимущества компании
       ul(class=`${className}__list`)
         each picture, value in pictures
           li(class=`${className}__item`)
@@ -86,14 +86,14 @@ mixin featuresList(className)
 mixin logoList(className)
   section(class=`${className}`)
     div(class=`${className}__wrap`)
-      h2.visually-hidden Используемые технологии в проекте
+      h2(class=`${className}__caption`) Бренды / Партнеры / Клиенты / Спонсоры / Технологии
       ul(class=`${className}__list`)
         each logo, value in logos
           li(class=`${className}__item`)
             a(href=logo.url, class=`${className}__link` aria-label=logo.label)
-              picture
-                source(type='image/webp', srcset=`img/${logo.imgSrc}.webp`)
-                img(class=`${className}__img`, src=`img/${logo.imgSrc}.png`, alt=logo.label)
+              //picture
+              //  source(type='image/webp', srcset=`img/${logo.imgSrc}.webp`)
+              img(class=`${className}__img`, src=`img/${logo.imgSrc}.png`, alt=logo.label)
 
 // pagination
 mixin pagination(amount, current)
