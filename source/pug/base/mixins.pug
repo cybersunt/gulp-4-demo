@@ -64,22 +64,22 @@ mixin promoBlock(className)
       button(class=`${className}__arrow ${className}__arrow--next` type='button', aria-label='Следующий слайд')
 
 // features/benefits/advantages/services
-mixin featuresList(className)
+mixin featuresList(className, itemClassName)
   section(class=`${className}`)
     div(class=`${className}__wrap`)
-      h2 Услуги или преимущества компании
+      h2(class=`${className}__caption`) Услуги или преимущества компании
       ul(class=`${className}__list`)
         each picture, value in pictures
-          li(class=`${className}__item`)
+          li(class=`${className}__item ${itemClassName}`)
             //picture
             //  source(type='image/webp', srcset=`img/${picture.src}.webp`)
-            img(class=`${className}__img`, src=`img/${picture.src}.png`, alt=picture.caption)
-            p(class=`${className}__caption`)= picture.caption
+            img(class=`${itemClassName}__img`, src=`img/${picture.src}.png`, alt=picture.caption)
+            p(class=`${itemClassName}__caption`)= picture.caption
             if picture.annotation == ''
-              a(href="#", class=`${className}__link` aria-label=picture.caption) Заказать
+              a(href="#", class=`${itemClassName}__link` aria-label=picture.caption) Заказать
             else
-              p(class=`${className}__notice`)= picture.annotation
-              a(href="#", class=`${className}__link` aria-label=picture.caption) Заказать
+              p(class=`${itemClassName}__notice`)= picture.annotation
+              a(href="#", class=`${itemClassName}__link` aria-label=picture.caption) Заказать
 
 
 // brands/parthers/customers/technologies

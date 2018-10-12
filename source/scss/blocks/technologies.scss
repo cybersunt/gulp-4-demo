@@ -1,13 +1,7 @@
 .technologies {
   @include wrapper;
   @include hr;
-
-  &__caption {
-    @include text(30px, 30px);
-    text-align: center;
-    text-transform: uppercase;
-    color: cornflowerblue;
-  }
+  @include heading-2;
 
   &__list {
     @include list-row;

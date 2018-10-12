@@ -12,9 +12,10 @@ $global-bg: $white;
 
 $font-face: 'PT Sans', Arial, sans-serif;
 
-@mixin text($font-size: 14px, $line-height: 16px) {
+@mixin text($font-size: 14px, $line-height: 16px, $color: null) {
   font-size: $font-size;
   line-height: $line-height;
+  color: $color;
 }
 
 @mixin ul-reset {
@@ -61,6 +62,14 @@ $font-face: 'PT Sans', Arial, sans-serif;
   padding-bottom: 50px;
   margin-bottom: 50px;
   border-bottom: 3px dashed #e0e0e0;
+}
+
+@mixin heading-2{
+  &__caption {
+    @include text(30px, 30px, cornflowerblue);
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 
 @mixin position($position, $top: null, $left: null, $right: null, $bottom: null){
