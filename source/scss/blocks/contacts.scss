@@ -1,0 +1,16 @@
+.contacts {
+  &__map-img {
+    @include wh(1280px, 475px);
+    display: block;
+    position: relative;
+    &::before {
+      @include position(absolute, 116px, 406px);
+      @include wh(30px, 42px);
+      margin-top: -42px;
+      margin-left: -15px;
+      content: '';
+      background: url('../img/content/map-pin.png') no-repeat 0 0;
+      z-index: 1;
+    }
+  }
+}

@@ -122,7 +122,7 @@ mixin map
     .contacts__wrap
       #map.contacts__map
         picture.contacts__map-img
-          source(type='image/webp', srcset=`img/content/${contacts.imgSrc}.webp`)
+          //source(type='image/webp', srcset=`img/content/${contacts.imgSrc}.webp`)
           img(src=`img/content/${contacts.imgSrc}.jpg`, alt=`Офис компании по адресу ул. ${contacts.adress}, ${contacts.city}`)
       .contacts__info
         p.contacts__name= contacts.name
