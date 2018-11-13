@@ -12,6 +12,10 @@ $global-bg: $white;
 
 $font-face: 'PT Sans', Arial, sans-serif;
 
+$wrapper: 0 40px;
+$map-wrapper: 0 -40px;
+$info-wrapper: 20px;
+
 @mixin text($font-size: 14px, $line-height: 16px, $color: null) {
   font-size: $font-size;
   line-height: $line-height;
@@ -49,11 +53,11 @@ $font-face: 'PT Sans', Arial, sans-serif;
 @mixin wrapper ($display: null, $justify: null, $align: null) {
   &__wrap {
     @if $display == null {
-      padding: 0 40px;
+      padding: $wrapper;
     }
     @else {
       @include flex-box($justify,  $align);
-      padding: 0 40px;
+      padding: $wrapper;
     }
   }
 }
@@ -102,17 +106,18 @@ $font-face: 'PT Sans', Arial, sans-serif;
 }
 
 @mixin btn-link {
-  padding: 7px 10px 9px;
-  border: 1px solid #ff5d04;
+  padding: 7px 20px 9px;
   border-radius: 8px;
-  background-color: coral;
+  color: white;
+  text-align: center;
+  background-color: #00ad21;
 
   &:focus,
   &:hover {
-    background-color: #ff5d04;
+    background-color: #218b3d;
     border-color: coral;
   }
   &:active {
-    background-color: #ff4000;
+    background-color: #218b3d;
   }
 }
