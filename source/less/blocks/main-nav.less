@@ -1,0 +1,29 @@
+.main-nav {
+
+  &__list {
+    .list-row;
+  }
+
+  &__item {
+    .text(16px, 18px);
+    text-transform: uppercase;
+    font-weight: 600;
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+
+  &__link {
+    .text(16px, 18px);
+    color: @deepskyblue;
+
+    &:hover,
+    &:focus  {
+      color: @royalblue;
+    }
+
+    &:active {
+      color: darkblue;
+    }
+  }
+}

@@ -1,0 +1,123 @@
+//colors
+@black: black;
+@white: white;
+@aliceblue: aliceblue;
+@deepskyblue: deepskyblue;
+@lime: lime;
+@royalblue: royalblue;
+@darkblue: darkblue;
+
+@content-color: @royalblue;
+@global-bg: @white;
+
+@font-face: 'PT Sans', Arial, sans-serif;
+
+@wrapper: 0 40px;
+@map-wrapper: 0 -40px;
+@info-wrapper: 20px;
+
+.text(@font-size: 14px, @line-height: 16px, @color: null) {
+  font-size: @font-size;
+  line-height: @line-height;
+  color: @color;
+}
+
+.ul-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-row {
+  .ul-reset;
+  display: flex;
+}
+
+.list-item (@right: null, @bottom: null){
+  &:not(:last-child) {
+    margin-right: @right;
+    margin-bottom: @bottom;
+  }
+}
+
+.flex-box(@justify: null, @align: null) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.flex-center(@justify: null, @align: null) {
+  .flex-box(center, center);
+}
+
+.wrapper (@display: null, @justify: null, @align: null) {
+  &__wrap {
+    @if @display == null {
+      padding: @wrapper;
+    }
+    @else {
+      .flex-box(@justify,  @align);
+      padding: @wrapper;
+    }
+  }
+}
+
+.hr {
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 3px dashed #e0e0e0;
+}
+
+.heading-2{
+  &__caption {
+    .text(30px, 30px, cornflowerblue);
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.position(@position, @top: null, @left: null, @right: null, @bottom: null){
+  position: @position;
+  left: @left;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+}
+
+.wh(@width: null, @height: null){
+  width: @width;
+  height: @height;
+
+  @if @height == null {
+    width: @width;
+    height: @width;
+  }
+}
+
+.ib {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.btn {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+.btn-link {
+  padding: 7px 20px 9px;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  background-color: #00ad21;
+
+  &:focus,
+  &:hover {
+    background-color: #218b3d;
+    border-color: coral;
+  }
+  &:active {
+    background-color: #218b3d;
+  }
+}

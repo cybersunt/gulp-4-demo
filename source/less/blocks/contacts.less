@@ -1,0 +1,48 @@
+.contacts {
+  .wrapper;
+  &__wrap {
+    position: relative;
+  }
+  &__map-img {
+    .wh(1280px, 475px);
+    margin: @map-wrapper;
+    display: block;
+    position: relative;
+    &::before {
+      .position(absolute, 116px, 406px);
+      .wh(30px, 42px);
+      margin-top: -42px;
+      margin-left: -15px;
+      content: '';
+      background: url('../img/content/map-pin.png') no-repeat 0 0;
+      z-index: 1;
+    }
+  }
+  &__info {
+    .position(absolute, 125px, null, 160px);
+    .wh(252px, 230px);
+    .text(16px, 18px);
+    padding: @info-wrapper;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+  }
+  &__name {
+    .text(18px, 30px);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+  }
+  &__adress {
+    margin-bottom: 10px;
+  }
+  &__btn {
+    .text(16px, 28px);
+    .btn-link;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 30px;
+  }
+}

@@ -5,7 +5,8 @@ module.exports = {
     json: '/pug/data/',
     layout: '/pug/pages/layout.json',
     pug: '/pug/**/*.pug',
-    scss: '/scss/**/*.scss',
+    style: '/scss/**/*.scss',
+    // style: '/less/**/*.less',
     img: '/img/**/*'
   },
   img: '/img/**/*'

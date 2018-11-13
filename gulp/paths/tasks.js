@@ -4,7 +4,8 @@ module.exports = [
   './gulp/tasks/fonts',
 
   './gulp/tasks/pug',
-  './gulp/tasks/scss',
+  // './gulp/tasks/scss',
+  './gulp/tasks/less',
 
   './gulp/tasks/server',
   './gulp/tasks/watch'

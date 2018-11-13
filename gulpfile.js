@@ -23,7 +23,7 @@ $.gulp.task('build', $.gulp.series(
     'fonts',
     'json',
     'pug',
-    'scss:build'
+    'style:build'
   )
 ));
 
@@ -34,7 +34,7 @@ $.gulp.task('default', $.gulp.series(
     'fonts',
     'json',
     'pug',
-    'scss:dev'
+    'style:dev'
   ),
   $.gulp.parallel(
     'watch',
