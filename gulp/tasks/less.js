@@ -21,7 +21,7 @@ module.exports = function () {
       .pipe($.gp.sourcemaps.write())
       .pipe($.gulp.dest(outputDirCss))
       .pipe($.browserSync.reload({stream : true}));
-});
+  });
 
   $.gulp.task('style:build', () => {
     return $.gulp.src(sourceFileLess)
@@ -32,5 +32,6 @@ module.exports = function () {
       .pipe($.gp.csso())
       .pipe($.gp.rename({ suffix: '.min' }))
       .pipe($.gulp.dest(outputDirCss));
-});
+  });
+
 }
