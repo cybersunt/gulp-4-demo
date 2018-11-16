@@ -182,10 +182,10 @@ mixin radioButtons(name, items)
 mixin checkBoxes(items)
   each item, value in items
     if item.checked === true
-      input.filter__radio(id=`${item.id}`, name=`${item.name}`, type='checkbox', checked='')
+      input.filter__checkbox(id=`${item.id}`, name=`${item.name}`, type='checkbox', checked='')
       label.filter__value(for=`${item.id}`, onmousedown='return false', tabindex='0')= item.label
     else
-      input.filter__radio(id=`${item.id}`, name=`${item.name}`,  type='checkbox')
+      input.filter__checkbox(id=`${item.id}`, name=`${item.name}`,  type='checkbox')
       label.filter__value(for=`${item.id}`, onmousedown='return false', tabindex='0')= item.label
 
 //feedback

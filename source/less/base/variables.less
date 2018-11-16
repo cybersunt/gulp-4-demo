@@ -130,3 +130,38 @@
   border: 0;
   padding: 0;
 }
+
+.checkUp(@width, @marginLeftCheckIn, @position, @top: null, @left: null, @right: null, @bottom: null) {
+  position: relative;
+  padding-left: calc(@width + @marginLeftCheckIn);
+  &::before {
+    .wh(@width);
+    .position(@position, @top, @left, @right, @bottom);
+    content: '';
+    background-color: @white;
+    cursor: pointer;
+  }
+}
+//Вариант когда мы просиываем чекбоксы и радиокнопки через css
+.checkOn(@width, @marginLeftCheckOn, @position, @top: null, @left: null, @right: null, @bottom: null) {
+  position: relative;
+  padding-left: calc(@width + @marginLeftCheckOn);
+  &::before {
+    .wh(@width);
+    .position(@position, @top, @left, @right, @bottom);
+    content: '';
+    cursor: pointer;
+  }
+}
+
+.checkOff(@width: null, @height: null, @marginLeftCheckOff, @position, @top: null, @left: null, @right: null, @bottom: null) {
+  position: relative;
+  padding-left: calc(@width + @marginLeftCheckOff);
+  &::after {
+    .wh(@width, @height);
+    .position(@position, @top, @left, @right, @bottom);
+    content: '';
+    cursor: pointer;
+    z-index: 1;
+  }
+}

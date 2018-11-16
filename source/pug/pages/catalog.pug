@@ -1,29 +1,30 @@
 extends ../base/basic-templ
 
 block vars
-  - var currentPage = 'Главная'
-  - var title = 'Главная страница'
-  - var description = 'Описание главной страницы'
+  - var currentPage = 'Каталог'
+  - var title = 'Каталог'
+  - var description = 'Описание каталога товаров'
 
 
 block content
   main.page-inner
     section.catalog-filter
-      h2.visually-hidden Фильтр каталога
-      form.filter(method='get', action='#')
+      .__wrap
+        h2.visually-hidden Фильтр каталога
+        form.filter(method='get', action='#')
 
-        fieldset.filter__fieldset
-          legend.filter__title Стоимость
-           +rangePrice
+          fieldset.filter__fieldset
+            legend.filter__title Стоимость
+            +rangePrice
 
-        fieldset.filter__fieldset
-          legend.filter__title Сетка
+          fieldset.filter__fieldset
+            legend.filter__title Сетка
             +radioButtons('grid', radiobuttons)
 
-        fieldset.filter__fieldset
-          legend.filter__title Модули
+          fieldset.filter__fieldset
+            legend.filter__title Модули
             +checkBoxes(checkboxes)
 
-    +catalogList('services', 'Категории', categories)
-    +catalogList('hotels', 'Отели', goods, 'hotel')
-    +pagination(5, 1)
+      +catalogList('services', 'Категории', categories)
+      +catalogList('hotels', 'Отели', goods, 'hotel')
+      //+pagination(5, 1)
