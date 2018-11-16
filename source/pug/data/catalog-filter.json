@@ -8,19 +8,22 @@
       "id": "adaptive",
       "value": "adaptive",
       "label": "Адаптивая",
-      "checked": true
+      "checked": true,
+      "disabled": true
     },
     {
       "id": "fixed",
       "value": "fixed",
       "label": "Фиксированная",
-      "checked": false
+      "checked": false,
+      "disabled": false
     },
     {
       "id": "rubber",
       "value": "rubber",
       "label": "Резиновая",
-      "checked": false
+      "checked": false,
+      "disabled": false
     }
   ],
   "checkboxes": [
@@ -28,25 +31,29 @@
       "id": "slider",
       "name": "slider",
       "label": "Слайдер",
-      "checked": true
+      "checked": true,
+      "disabled": false
     },
     {
       "id": "catalog",
       "name": "catalog",
       "label": "Каталог",
-      "checked": false
+      "checked": false,
+      "disabled": false
     },
     {
       "id": "news",
       "name": "news",
       "label": "Новости",
-      "checked": true
+      "checked": true,
+      "disabled": true
     },
     {
       "id": "basket",
       "name": "basket",
       "label": "Корзина",
-      "checked": false
+      "checked": false,
+      "disabled": false
     }
   ]
 }
