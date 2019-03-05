@@ -23,7 +23,9 @@ $.gulp.task('build', $.gulp.series(
     'fonts',
     'json',
     'pug',
-    'style:build'
+    'style:build',
+    'images',
+    'sprite'
   )
 ));
 
@@ -34,10 +36,13 @@ $.gulp.task('default', $.gulp.series(
     'fonts',
     'json',
     'pug',
-    'style:dev'
+    'style:dev',
+    'images',
+    'sprite'
   ),
   $.gulp.parallel(
     'watch',
     'server'
   )
 ));
+

@@ -10,7 +10,7 @@ module.exports = function () {
       .pipe($.gp.less())
       .on('error', $.gp.notify.onError(function(error) {
         return {
-          title: 'Error in the scss file',
+          title: 'Error in the less file',
           message:  error.message
         }
       }))

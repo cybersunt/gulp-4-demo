@@ -9,5 +9,6 @@ module.exports = {
     styles: '/less/**/*.less',
     img: '/img/**/*'
   },
-  img: '/img/**/*'
+  img: '/img/**/*',
+  sprite: '/img/icon-*.svg',
 };
