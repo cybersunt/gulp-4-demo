@@ -6,11 +6,11 @@ const autoprefixer = require('autoprefixer'),
 module.exports = function () {
   $.gulp.task('style:dev', () => {
     return $.gulp.src(sourceFileLess)
-      .pipe($.gp.sourcemaps.init())
-      .pipe($.gp.less())
-      .on('error', $.gp.notify.onError(function(error) {
+    .pipe($.gp.sourcemaps.init())
+    .pipe($.gp.less()).on('error',
+      $.gp.notify.onError(function(error) {
         return {
-          title: 'Error in the less file',
+          title: 'Error in style file',
           message:  error.message
         }
       }))

@@ -7,8 +7,10 @@ module.exports = {
     pug: '/pug/**/*.pug',
     // styles: '/scss/**/*.scss',
     styles: '/less/**/*.less',
-    img: '/img/**/*'
+    img: '/img/**/*',
+    js: '/js/**/*.js'
   },
   img: '/img/**/*',
   sprite: '/img/icon-*.svg',
+  js:'/js/**/*'
 };

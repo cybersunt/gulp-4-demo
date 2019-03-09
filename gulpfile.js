@@ -25,7 +25,8 @@ $.gulp.task('build', $.gulp.series(
     'pug',
     'style:build',
     'images',
-    'sprite'
+    'sprite',
+    'scripts:build'
   )
 ));
 
@@ -38,7 +39,8 @@ $.gulp.task('default', $.gulp.series(
     'pug',
     'style:dev',
     'images',
-    'sprite'
+    'sprite',
+    'scripts:dev'
   ),
   $.gulp.parallel(
     'watch',
