@@ -10,6 +10,7 @@ module.exports = {
     img: '/img/**/*',
     js: '/js/**/*.js'
   },
+  fonts: '/fonts/**/*',
   img: '/img/**/*',
   sprite: '/img/icon-*.svg',
   js:'/js/**/*'

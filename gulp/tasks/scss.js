@@ -5,7 +5,7 @@ const autoprefixer = require('autoprefixer'),
 
 module.exports = function () {
   $.gulp.task('style:dev', () => {
-    return $.gulp.src(sourceFileScss)
+    return $.gulp.src(sourceFileScss{since: $.gulp.lastRun('style:dev')})
     .pipe($.gp.sourcemaps.init())
     .pipe($.gp.sass()).on('error',
       $.gp.notify.onError(function(error) {
@@ -18,6 +18,7 @@ module.exports = function () {
         autoprefixer('last 2 version')
       ]))
       .pipe($.gp.plumber())
+      .pipe($.gp.remember('style:dev'))
       .pipe($.gp.sourcemaps.write('.'))
       .pipe($.gulp.dest(outputDirCss))
       .pipe($.browserSync.reload({stream : true}));

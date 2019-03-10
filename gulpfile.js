@@ -17,7 +17,6 @@ $.path.task.forEach(function(taskPath) {
 });
 
 $.gulp.task('build', $.gulp.series(
-  'clean',
   'copy',
   $.gulp.parallel(
     'fonts',

@@ -5,7 +5,7 @@ const rsp = require('remove-svg-properties').stream,
 
 module.exports = function () {
   $.gulp.task('sprite', function () {
-    return $.gulp.src(sourceSpriteFiles)
+    return $.gulp.src(sourceSpriteFiles, {since: $.gulp.lastRun('sprite')})
     .pipe($.gp.plumber())
     .pipe(rsp.remove({
       properties: [rsp.PROPS_FILL]
@@ -13,6 +13,7 @@ module.exports = function () {
     .pipe($.gp.svgstore({
       inlineSvg: true
     }))
+    .pipe($.gp.remember('sprite'))
     .pipe($.gp.rename('sprite.svg'))
     .pipe($.gulp.dest(outputDirSprite))
     .pipe($.browserSync.reload({stream : true}));

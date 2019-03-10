@@ -4,13 +4,14 @@ const uglify = require('gulp-uglify-es').default,
 
 module.exports = function () {
   $.gulp.task('scripts:dev', function () {
-    return $.gulp.src(sourceJSFiles)
+    return $.gulp.src(sourceJSFiles, {since: $.gulp.lastRun('scripts:dev')})
     .pipe($.gp.sourcemaps.init())
     .pipe($.gp.jslint())
     .pipe($.gp.plumber())
     .pipe($.gp.babel({
       presets: ['env']
     }))
+    .pipe($.gp.remember('scrits'))
     .pipe($.gp.concat('app.js'))
     .pipe($.gp.sourcemaps.write('.'))
     .pipe($.gulp.dest(outputDirJS))
