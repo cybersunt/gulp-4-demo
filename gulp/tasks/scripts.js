@@ -12,7 +12,7 @@ module.exports = function () {
       presets: ['env']
     }))
     .pipe($.gp.concat('app.js'))
-    .pipe($.gp.sourcemaps.write())
+    .pipe($.gp.sourcemaps.write('.'))
     .pipe($.gulp.dest(outputDirJS))
     .pipe($.browserSync.reload({stream : true}));
   });

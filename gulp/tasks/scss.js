@@ -18,7 +18,7 @@ module.exports = function () {
         autoprefixer('last 2 version')
       ]))
       .pipe($.gp.plumber())
-      .pipe($.gp.sourcemaps.write())
+      .pipe($.gp.sourcemaps.write('.'))
       .pipe($.gulp.dest(outputDirCss))
       .pipe($.browserSync.reload({stream : true}));
   });
