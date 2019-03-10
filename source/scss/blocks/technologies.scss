@@ -1,7 +1,5 @@
 .technologies {
   @include wrapper;
-  @include hr;
-  @include heading-2;
 
   &__list {
     @include list-row;

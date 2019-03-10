@@ -17,7 +17,8 @@ module.exports = function () {
   });
 
   $.gulp.task('pug', () => {
-    return $.gulp.src(sourceFilesPug, {since: $.gulp.lastRun('pug')})
+    return $.gulp.src(sourceFilesPug)
+      .pipe($.gp.remember('pug'))
       .pipe($.gp.pug({
         locals : JSON.parse($.fs.readFileSync(outputFileJson + 'layout.json', 'utf8')),
         pretty: true,
@@ -42,7 +43,6 @@ module.exports = function () {
       .pipe(removeEmptyLines({
         removeComments: true
       }))
-      .pipe($.gp.remember('pug'))
       .pipe($.gulp.dest($.config.ready))
       .pipe($.browserSync.reload({stream : true}));
   });

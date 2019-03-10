@@ -1,6 +1,5 @@
 .page-footer {
   @include wrapper(flex, flex-start, center);
-  background: aliceblue;
 
   &__wrap {
     min-height: 50px;

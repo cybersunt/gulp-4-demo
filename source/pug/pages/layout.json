@@ -121,7 +121,7 @@
 	],
 	"contacts": {
 		"title": "Контакты",
-		"name": "Nexign",
+		"name": "Yulia Maximova",
 		"index": "199155",
 		"city": "Санкт-Петербург",
 		"adress": "Уральская, 4",
@@ -227,44 +227,28 @@
 	},
 	"networks": [
 		{
-			"name": "vk",
-			"title": "Вконтакте",
-			"href": "#vk-icon",
-			"url": "https://vk.com",
-			"width": 25,
-			"height": 25
+			"name": "tw",
+			"title": "Twitter",
+			"href": "#icon-twitter",
+			"url": "https://twitter.com",
+			"width": 17,
+			"height": 15
 		},
 		{
 			"name": "fb",
 			"title": "Facebook",
-			"href": "#fb-icon",
+			"href": "#icon-fb",
 			"url": "https://facebook.com",
-			"width": 25,
-			"height": 25
+			"width": 12,
+			"height": 22
 		},
 		{
-			"name": "insta",
-			"title": "Instagram",
-			"href": "#insta-icon",
-			"url": "https://instagram.com",
-			"width": 25,
-			"height": 25
-		},
-		{
-			"name": "tw",
-			"title": "Twitter",
-			"href": "#tw-icon",
-			"url": "https://twitter.com",
-			"width": 25,
-			"height": 25
-		},
-		{
-			"name": "gh",
-			"title": "GitHub",
-			"href": "#gb-icon",
-			"url": "https://github.com",
-			"width": 25,
-			"height": 25
+			"name": "youtube",
+			"title": "Youtube",
+			"href": "#icon-youtube",
+			"url": "https://youtube.com",
+			"width": 20,
+			"height": 16
 		}
 	]
 }

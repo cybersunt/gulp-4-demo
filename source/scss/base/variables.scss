@@ -13,9 +13,7 @@ $global-bg: $grey;
 
 $font-face:  Roboto, 'Helvetica Neue', sans-serif;
 
-$wrapper: 0 40px;
-$map-wrapper: 0 -40px;
-$info-wrapper: 20px;
+$wrapper: 30px 40px 0;
 
 @mixin text($font-size: 14px, $line-height: 16px, $color: null) {
   font-size: $font-size;
@@ -63,20 +61,6 @@ $info-wrapper: 20px;
   }
 }
 
-@mixin hr {
-  padding-bottom: 50px;
-  margin-bottom: 50px;
-  border-bottom: 3px dashed #e0e0e0;
-}
-
-@mixin heading-2{
-  &__caption {
-    @include text(30px, 30px, cornflowerblue);
-    text-align: center;
-    text-transform: uppercase;
-  }
-}
-
 @mixin position($position, $top: null, $left: null, $right: null, $bottom: null){
   position: $position;
   left: $left;
@@ -98,27 +82,4 @@ $info-wrapper: 20px;
 @mixin ib {
   display: inline-block;
   vertical-align: top;
-}
-
-@mixin btn {
-  border: 0;
-  padding: 0;
-  background: none;
-}
-
-@mixin btn-link {
-  padding: 7px 20px 9px;
-  border-radius: 8px;
-  color: white;
-  text-align: center;
-  background-color: #00ad21;
-
-  &:focus,
-  &:hover {
-    background-color: #218b3d;
-    border-color: coral;
-  }
-  &:active {
-    background-color: #218b3d;
-  }
 }

@@ -27,11 +27,10 @@ mixin socialLinks
   ul.social
     each network, value in networks
       li.__item
-        a.__link(href=network.url, aria-label=network.title)
-          img(src='http://placehold.it/25x25', alt=network.title, width=network.width, height=network.height).__icon
-            //- svg.__icon(width='26px', height='15px', aria-labelledby='Мы во Вконтакте'
-            //-   title#title__vk Мы во Вконтакте
-            //-     use(xlink:href='#vk-icon')
+        a.__link(href=network.url)
+          svg.__icon(width=network.width, height=network.height, aria-labelledby=`title_${network.name}`)
+            title(id=`title_${network.name}`)= network.title
+            use(xlink:href=`${network.href}`)
 
 // slideshow/gallery/advertising/advertisement/adv/commercial/promo/slider/carousel
 mixin promoBlock(className)
@@ -86,7 +85,7 @@ mixin featuresList(className, itemClassName)
 mixin logoList(className)
   section(class=`${className}`)
     div(class=`${className}__wrap`)
-      h2(class=`${className}__caption`) Бренды / Партнеры / Клиенты / Спонсоры / Технологии
+      h2(class=`${className}__caption`) Здесь могут быть: бренды, партнеры, клиенты, спонсоры...
       ul(class=`${className}__list`)
         each logo, value in logos
           li(class=`${className}__item`)
@@ -122,7 +121,7 @@ mixin map
     .contacts__wrap
       #map.contacts__map
         picture.contacts__map-img
-          //source(type='image/webp', srcset=`img/content/${contacts.imgSrc}.webp`)
+          source(type='image/webp', srcset=`img/content/${contacts.imgSrc}.webp`)
           img(src=`img/content/${contacts.imgSrc}.jpg`, alt=`Офис компании по адресу ул. ${contacts.adress}, ${contacts.city}`)
       .contacts__info
         p.contacts__name= contacts.name
@@ -157,36 +156,45 @@ mixin rangePrice
   label.visually-hidden(for='price')
     | Шкала стоимости
     input#price(type='range', name='price', min='0', max=filter.maxPrice, step=filter.stepPrice)
-  .filter-price__range-controls
-    .filter-price__scale
-      .filter-price__bar
-    button.filter-price__toggle.filter-price__toggle--toggle-min
-    buttom.filter-price__toggle.filter-price__toggle--toggle-max
   .filter-price__controls
     label.filter-price__price.filter-price__price--min(for='min-price')
       | от
-      input#min-price.filter-price__input(type='number', value='0', min=0)
+      input#min-price.filter-price__input(type='text', value='0')
     label.filter-price__price.filter-price__price--max(for='max-price')
       | до
-      input#max-price.filter-price__input(type='number', value=filter.maxPrice, max=filter.maxPrice)
+      input#max-price.filter-price__input(type='text', value=filter.maxPrice)
+  .filter-price__range-controls
+    .filter-price__scale
+      .filter-price__bar
+    button.filter-price__toggle.filter-price__toggle--min
+    button.filter-price__toggle.filter-price__toggle--max
 
 mixin radioButtons(name, items)
   each item, value in items
     if item.checked === true
       input.filter__radio(id=`${item.id}`, name=name, value=`${item.value}`, type='radio', checked='')
-      label.filter__value(for=`${item.id}`, onmousedown='return false', tabindex='0')= item.label
+      label.filter__label(for=`${item.id}`, onmousedown='return false', tabindex='0')= item.label
     else
       input.filter__radio(id=`${item.id}`, name=name, value=`${item.value}`, type='radio')
-      label.filter__value(for=`${item.id}`, onmousedown='return false', tabindex='0')= item.label
+      label.filter__label(for=`${item.id}`, onmousedown='return false', tabindex='0')= item.label
 
 mixin checkBoxes(items)
-  each item, value in items
-    if item.checked === true
-      input.filter__checkbox(id=`${item.id}`, name=`${item.name}`, type='checkbox', checked='')
-      label.filter__value(for=`${item.id}`, onmousedown='return false', tabindex='0')= item.label
-    else
-      input.filter__checkbox(id=`${item.id}`, name=`${item.name}`,  type='checkbox')
-      label.filter__value(for=`${item.id}`, onmousedown='return false', tabindex='0')= item.label
+  each item in items
+    div.filter__field
+      if item.checked === true
+        if item.disabled === true
+          input.filter__checkbox(id=`${item.id}`, name=`${item.name}`, type='checkbox', checked='', disabled='')
+          label.filter__label(for=`${item.id}`, onmousedown='return false', tabindex='0')= item.label
+        else
+          input.filter__checkbox(id=`${item.id}`, name=`${item.name}`, type='checkbox', checked='')
+          label.filter__label(for=`${item.id}`, onmousedown='return false', tabindex='0')= item.label
+      else
+        if item.disabled === true
+          input.filter__checkbox(id=`${item.id}`, name=`${item.name}`,  type='checkbox', disabled='')
+          label.filter__label(for=`${item.id}`, onmousedown='return false', tabindex='0')= item.label
+        else
+          input.filter__checkbox(id=`${item.id}`, name=`${item.name}`,  type='checkbox')
+          label.filter__label(for=`${item.id}`, onmousedown='return false', tabindex='0')= item.label
 
 //feedback
 mixin feedback
@@ -211,12 +219,4 @@ mixin feedback
             svg.feedback__close-icon(width='21', height='21', aria-labelledby='feedback__close-title')
               title#feedback__close-title= btns.close
                  use(xlink:href='#close-cross')
-
-
-//- mixin nav (className, name, items)
-//-   nav(class=`${className}`)
-//-     ul(class=`${className}__list`)
-//-       each item in items
-//-         li(class=`${className}__item`)
-//-           a(class=`${className}__link`, href='#')= item
 
